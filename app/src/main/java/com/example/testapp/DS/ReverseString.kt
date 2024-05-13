@@ -5,11 +5,18 @@ class ReverseString {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val name = "My name is gursewak singh"
-            println("Input Value = " + name)
-            val array = name.toCharArray()
+            reverseString(input = "My Name is Gursewak")
+        }
+
+        private fun reverseString(input: String?) {
+            if (input == null || input.length < 2) {
+                print("OutPut = Input String is null or empty or size < 2")
+                return
+            }
+            println("Input Value = " + input)
+            val array = input.toCharArray()
             var start = 0
-            var end = name.lastIndex
+            var end = input.lastIndex
             while(start != end) {
                 val firstItem = array[start]
                 val lastItem = array[end]
